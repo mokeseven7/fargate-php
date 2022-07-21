@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 import 'source-map-support/register';
 import * as cdk from 'aws-cdk-lib';
-import { FargateConstruct } from '../lib/fargate-construct';
+import { FargateStack } from '../lib/fargate-construct';
 
 const app = new cdk.App();
-new FargateConstruct(app, 'FargateStack', {
+new FargateStack(app, 'FargateStack', {
   clientName: 'hello',
   environment: {
-    APP_ENV: 'hello'
+    APPENV: 'hello'
   },
   domain: 'nada',
   clusterName: 'mycluster',
